@@ -1,0 +1,43 @@
+directories:
+  output: build
+  buildResources: build
+productName: shop
+appId: com.leon.shop
+copyright: 0.0.1
+nsis:
+  oneClick: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  installerIcon: ./build/icons/aaa.ico
+  uninstallerIcon: ./build/icons/bbb.ico
+  installerHeaderIcon: ./build/icons/aaa.ico
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: xxxx
+  include: build/script/installer.nsh
+publish:
+  - provider: generic
+    url: 'http://xxxxx/'
+files:
+  - filter:
+      - dist/electron/**/*
+dmg:
+  contents:
+    - x: 410
+      'y': 150
+      type: link
+      path: /Applications
+    - x: 600
+      'y': 600
+      type: file
+mac:
+  icon: build/icons/icon.icns
+win:
+  icon: build/icons/aims.ico
+  target:
+    - target: nsis
+      arch:
+        - ia32
+linux:
+  icon: build/icons
+electronVersion: 11.1.1
