@@ -1,0 +1,3 @@
+"id": 2
+"name": 英雄联盟
+"synopsis": 一个MOBA类游戏
